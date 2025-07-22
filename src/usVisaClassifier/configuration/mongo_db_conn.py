@@ -4,13 +4,20 @@ import os
 from src.usVisaClassifier.exception import USvisaException
 from src.usVisaClassifier.logger import logging
 
-from src.usVisaClassifier.constants import DATABASE_NAME, MONGODB_URL_KEY
+from src.usVisaClassifier.constants import CONFIG_FILE_PATH
+from src.usVisaClassifier.utils import read_yaml_file
 import pymongo
 import certifi
 from dotenv import load_dotenv
 
 load_dotenv()
 ca = certifi.where()
+
+# Read config
+config = read_yaml_file("config.yaml")
+
+# Access database name safely with default fallback
+DATABASE_NAME = config['database']['name']
 
 class MongoDBClient:
     """
@@ -27,7 +34,7 @@ class MongoDBClient:
             if MongoDBClient.client is None:
                 mongo_db_url = os.getenv("MONGODB_URL_KEY")
                 if mongo_db_url is None:
-                    raise Exception(f"Environment key: {MONGODB_URL_KEY} is not set.")
+                    raise Exception(f"Environment key is not set.")
                 MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
             self.client = MongoDBClient.client
             self.database = self.client[database_name]

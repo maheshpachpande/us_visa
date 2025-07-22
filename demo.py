@@ -1,10 +1,12 @@
-from src.usVisaClassifier.logger import logger
-from src.usVisaClassifier.exception import USvisaException
-import sys
+from src.usVisaClassifier.constants import CONFIG_FILE_PATH
+from src.usVisaClassifier.utils import read_yaml_file
 
-import os
-from dotenv import load_dotenv
+# Read config
+config = read_yaml_file("config.yaml")
 
-load_dotenv()
 
-print(os.getenv("MONGODB_URL_KEY"))
+
+# Access database name safely with default fallback
+DATABASE_NAME = config['database']['name']
+
+print(f"Database Name: {DATABASE_NAME}")
