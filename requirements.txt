@@ -20,5 +20,7 @@ fastapi
 uvicorn
 jinja2
 python-multipart
+certifi
+dotenv
 -e .
 
