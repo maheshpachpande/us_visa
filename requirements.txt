@@ -22,5 +22,8 @@ jinja2
 python-multipart
 certifi
 dotenv
+evidently
+dvc
+
 -e .
 

@@ -19,9 +19,17 @@ target:
   column: case_status
   current_year: 2025  # Placeholder to be updated at runtime
 
+# Data Ingestion related constants (start with DATA_INGESTION var name)
 data_ingestion:
   collection_name: visa_data
   dir_name: data_ingestion
   feature_store_dir: feature_store
   ingested_dir: ingested
   train_test_split_ratio: 0.2
+
+# Data Validation related constants (start with DATA_VALIDATION var name)
+DATA_VALIDATION:
+  DIR_NAME: "data_validation"
+  DRIFT_REPORT_DIR: "drift_report"
+  DRIFT_REPORT_FILE_NAME: "report.yaml"
+

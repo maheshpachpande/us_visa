@@ -4,7 +4,6 @@ import os
 from src.usVisaClassifier.exception import USvisaException
 from src.usVisaClassifier.logger import logging
 
-from src.usVisaClassifier.constants import CONFIG_FILE_PATH
 from src.usVisaClassifier.utils import read_yaml_file
 import pymongo
 import certifi
