@@ -52,7 +52,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          FJKxzquMez8=
+          dAHaR+n1Xz8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       continent:
@@ -62,7 +62,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          fL2WAMGsiD8=
+          FyyVmR6QiD8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       education_of_employee:
@@ -72,7 +72,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          ZZLjKUqEcD8=
+          qAuoK21fhD8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       full_time_position:
@@ -82,7 +82,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          T3f2bwEfhz8=
+          sereuj5fXj8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       has_job_experience:
@@ -92,7 +92,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          r5QY59FbbT8=
+          cZlqHXB4Zj8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       no_of_employees:
@@ -102,7 +102,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          AXIAGlBjmD8=
+          qWMeMd0NlT8=
         stattest_name: Wasserstein distance (normed)
         threshold: 0.1
       prevailing_wage:
@@ -112,7 +112,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          u49luaA+kj8=
+          UpEE3nlOmj8=
         stattest_name: Wasserstein distance (normed)
         threshold: 0.1
       region_of_employment:
@@ -122,7 +122,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          BOgOR/czcj8=
+          QguY3vQhiz8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       requires_job_training:
@@ -132,7 +132,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          0qkoXRDfcz8=
+          PxjRbu43Vj8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       unit_of_wage:
@@ -142,7 +142,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          dsqnxwUNhz8=
+          IRfT7GlGdj8=
         stattest_name: Jensen-Shannon distance
         threshold: 0.1
       yr_of_estab:
@@ -152,7 +152,7 @@ metrics:
         drift_score: !!python/object/apply:numpy.core.multiarray.scalar
         - *id002
         - !!binary |
-          CViqagSwoD8=
+          K/x8ZysOlz8=
         stattest_name: Wasserstein distance (normed)
         threshold: 0.1
     number_of_columns: 12

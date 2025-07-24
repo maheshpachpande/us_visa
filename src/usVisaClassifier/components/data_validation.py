@@ -23,10 +23,10 @@ from evidently.metrics.data_drift.data_drift_table import DataDriftTable
 # Data Validation Class
 # ============================================================================================
 
-class Datavalidation:
+class DataValidation:
     
-    def __init__(self, data_validation_config: DataValidationConfig, 
-                #  data_ingestion_artifact: DataIngestionArtifact,
+    def __init__(self, 
+                 data_validation_config: DataValidationConfig,
                  data_ingestion_cnf: DataIngestionConfig):
         try:
             logging.info(f"{'>>'*20} Data Validation {'<<'*20}")
@@ -128,6 +128,7 @@ class Datavalidation:
             drift_status = drift_json['metrics'][0]['result']['dataset_drift']
 
             logging.info(f"{n_drifted_features}/{n_features} features drifted.")
+            
             return drift_status
 
         except Exception as e:
@@ -189,10 +190,18 @@ class Datavalidation:
             # Create DataValidationArtifact
             data_validation_artifact = DataValidationArtifact(
                 validation_status=validation_status,
-                message=validation_error_msg,
-                drift_report_file_path=self.data_validation_config.drift_report_file_path
+                drift_report_file_path=self.data_validation_config.drift_report_file_path,
+                data_validation_report=self.data_validation_config.data_validation_report,
+                message=validation_error_msg
             )
+            
+            # Save validation artifact to YAML
+            artifact_dict = data_validation_artifact.__dict__
+            artifact_save_path = self.data_validation_config.data_validation_report
+            
+            write_yaml_file(file_path=artifact_save_path, content=artifact_dict)
 
+            print(self.data_validation_config.drift_report_file_path)
             logging.info(f"Data validation artifact: {data_validation_artifact}")
             return data_validation_artifact
         except Exception as e:
@@ -205,9 +214,14 @@ class Datavalidation:
 #     try:        
 #         data_validation_config = DataValidationConfig()
 #         data_ingestion_cnf = DataIngestionConfig()
+#         validation_artifact_path = "artifact/data_validation/data_validation_artifact.yaml"
         
-#         validator = Datavalidation(data_validation_config, data_ingestion_cnf)
+#         validator = DataValidation(data_validation_config, data_ingestion_cnf)
 #         validation_artifact = validator.initiate_data_validation()
-#         print(validation_artifact)
+        
+#         validation_artifact = validation_artifact.load(validation_artifact_path)
+#         status = validation_artifact.validation_status
+
+#         print("Validation Status:", status)
 #     except USvisaException as e:
 #         logging.error(f"Error during data validation: {e}")

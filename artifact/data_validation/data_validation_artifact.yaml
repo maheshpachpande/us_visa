@@ -1,0 +1,4 @@
+data_validation_report: artifact/data_validation/data_validation_artifact.yaml
+drift_report_file_path: artifact/data_validation/drift_report/report.yaml
+message: Drift not detected
+validation_status: true

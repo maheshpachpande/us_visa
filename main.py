@@ -4,6 +4,7 @@ from src.usVisaClassifier.exception import USvisaException
 
 from src.usVisaClassifier.pipeline.stage_01_data_ingestion_pipeline import DataIngestionTrainingPipeline
 from src.usVisaClassifier.pipeline.stage_02_data_validation_pipeline import DataValidationTrainingPipeline
+from src.usVisaClassifier.pipeline.stage_03_data_transformation_pipeline import DataTransformationTrainingPipeline
 
 
 
@@ -30,3 +31,15 @@ try:
     
 except Exception as e:
     raise USvisaException(e, sys)
+
+
+STAGE_NAME = "Data Transformation stage"
+
+try:
+    logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    obj = DataTransformationTrainingPipeline()
+    obj.main()
+    logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logging.exception(e)
+    raise e

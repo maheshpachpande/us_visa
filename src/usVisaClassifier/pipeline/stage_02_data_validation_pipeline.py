@@ -1,6 +1,6 @@
 
 import sys
-from src.usVisaClassifier.components.data_validation import Datavalidation
+from src.usVisaClassifier.components.data_validation import DataValidation
 
 from src.usVisaClassifier.exception import USvisaException
 from src.usVisaClassifier.logger import logging
@@ -24,7 +24,7 @@ class DataValidationTrainingPipeline:
         try:
             data_validation_config = DataValidationConfig()
             data_ingestion_cnf = DataIngestionConfig()
-            validator = Datavalidation(data_validation_config, data_ingestion_cnf)
+            validator = DataValidation(data_validation_config, data_ingestion_cnf)
             validation_artifact = validator.initiate_data_validation()
             logging.info(
                 "Exited the start_data_ingestion method of TrainPipeline class"

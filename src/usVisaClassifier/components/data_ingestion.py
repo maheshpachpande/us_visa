@@ -74,7 +74,7 @@ class DataIngestion:
 
             logging.info(f"Exported train and test file path.")
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise USvisaException(e, sys)
         
 
 
@@ -108,15 +108,15 @@ class DataIngestion:
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
             return data_ingestion_artifact
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise USvisaException(e, sys)
         
         
-# if __name__ == "__main__":
-#     try:
-#         data_ingestion_config = DataIngestionConfig()
-#         data_ingestion = DataIngestion(data_ingestion_config=data_ingestion_config)
-#         data_ingestion_artifact = data_ingestion.initiate_data_ingestion()
-#         print(data_ingestion_artifact)
-#     except Exception as e:
-#         print(f"An error occurred: {e}")
-#         sys.exit(1)
+if __name__ == "__main__":
+    try:
+        data_ingestion_config = DataIngestionConfig()
+        data_ingestion = DataIngestion(data_ingestion_config=data_ingestion_config)
+        data_ingestion_artifact = data_ingestion.initiate_data_ingestion()
+        
+        print(data_ingestion_artifact)
+    except Exception as e:
+        raise USvisaException(e, sys)
