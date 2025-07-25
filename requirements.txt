@@ -24,6 +24,7 @@ certifi
 dotenv
 evidently
 dvc
+neuro_mf
 
 -e .
 

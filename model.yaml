@@ -1,0 +1,27 @@
+model_selection:
+  models:
+    RandomForest:
+      class: sklearn.ensemble.RandomForestClassifier
+      params:
+        n_estimators: [50, 100, 200]
+        # max_depth: [null, 10, 20]
+        # min_samples_split: [2, 5]
+        # criterion: ["gini", "entropy"]
+    GradientBoosting:
+      class: sklearn.ensemble.GradientBoostingClassifier
+      params:
+        n_estimators: [50, 100, 150]
+        # learning_rate: [0.01, 0.1, 0.2]
+        # max_depth: [3, 5, 7]
+    # LogisticRegression:
+    #   class: sklearn.linear_model.LogisticRegression
+    #   params:
+    #     C: [0.01, 0.1, 1.0, 10]
+    #     penalty: ["l2"]
+    #     solver: ["liblinear", "lbfgs"]
+    # SVC:
+    #   class: sklearn.svm.SVC
+    #   params:
+    #     C: [0.1, 1, 10]
+    #     kernel: ["linear", "rbf", "poly"]
+    #     gamma: ["scale", "auto"]
