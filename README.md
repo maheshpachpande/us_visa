@@ -36,10 +36,21 @@ A comprehensive MLOps pipeline that automates model training, validation, deploy
 
 ### Step:5
 
-- Craete Exception file
-
+- Craete Exception file and Logger file
 
 ### Step:6
+- Workflow:
+
+- Data Ingestion
+- Data Validation
+- Data Transformation
+- Model Trainer
+- Model Evaluation
+- Model Pusher
+
+- (constants ---> entity ---> components ---> pipeline ---> main.py)
+
+### Step:7
 # =======================================================================================================
 """
 DataIngestion class is a modular and production-ready data ingestion component of an ML pipeline, 
@@ -77,4 +88,16 @@ Save transformed datasets and preprocessor object for model training."""
 
 """
 Model Trainer class is a component of an ML pipeline, specifically the Model Training stage. Its primary responsibility is to train multiple ML models using hyperparameter tuning (GridSearchCV), select the best model, evaluate it using metrics (F1, Precision, Recall), and save both the model and metrics as artifacts in a structured pipeline.
+"""
+
+# =======================================================================================================
+
+"""
+Model Evaluation module is responsible for evaluating a newly trained machine learning model by comparing its performance to the existing best model stored in an S3 bucket. If the new model performs better (based on the F1-score), it is marked as the accepted model for deployment.
+"""
+
+# =======================================================================================================
+
+"""
+The ModelPusher component is responsible for uploading the newly trained and evaluated model to a designated AWS S3 bucket if it has passed the evaluation criteria (i.e., accepted for production).
 """
