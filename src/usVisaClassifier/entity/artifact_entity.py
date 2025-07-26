@@ -42,3 +42,24 @@ class ClassificationMetricArtifact:
 class ModelTrainerArtifact:
     trained_model_file_path:str 
     metric_artifact:ClassificationMetricArtifact
+    
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted:bool
+    changed_accuracy:float
+    s3_model_path:str 
+    trained_model_path:str
+    
+    def to_dict(self) -> dict:
+        return {
+            "is_model_accepted": self.is_model_accepted,
+            "s3_model_path": self.s3_model_path,
+            "trained_model_path": self.trained_model_path,
+            "changed_accuracy": self.changed_accuracy
+        }
+
+
+@dataclass
+class ModelPusherArtifact:
+    bucket_name:str
+    s3_model_path:str

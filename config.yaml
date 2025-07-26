@@ -46,7 +46,23 @@ data_transformation:
 # model trainer related constants
 model_trainer:
   dir_name: model_trainer
-  trained_model_dir: trained_model
+  trained_model_dir: trained_model_object
   trained_model_name: model.pkl
-  expected_score: 0.2
+  expected_score: 0.75
   model_config_file_path: model.yaml
+
+
+aws:
+  access_key_id: "AWS_ACCESS_KEY_ID"
+  secret_access_key: "AWS_SECRET_ACCESS_KEY"
+  region: "us-east-1"
+
+model_evaluation:
+  changed_threshold_score: 0.02
+  bucket_name: "usvisa-model2025"
+  pusher_s3_key: "model-registry"
+
+
+model_pusher:
+  bucket_name: "usvisa-model2025"
+  pusher_s3_key: "model-registry"

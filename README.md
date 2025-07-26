@@ -37,3 +37,44 @@ A comprehensive MLOps pipeline that automates model training, validation, deploy
 ### Step:5
 
 - Craete Exception file
+
+
+### Step:6
+# =======================================================================================================
+"""
+DataIngestion class is a modular and production-ready data ingestion component of an ML pipeline, 
+built specifically for a US Visa classification project. 
+Its primary responsibility is to extract raw data from MongoDB, 
+store it locally (feature store), and split it into training and testing sets.
+"""
+# =======================================================================================================
+
+"""🎯 PURPOSE:
+This `DataValidation` class automates validation checks on ingested datasets before they enter the ML training pipeline.
+
+📦 KEY RESPONSIBILITIES:
+1. Validate schema integrity (number of columns and required columns)
+2. Detect missing values and drift in numerical/categorical columns
+3. Generate and save a drift report using the `Evidently` library
+4. Create and persist a `DataValidationArtifact` for pipeline traceability
+"""
+
+# =======================================================================================================
+
+""" This `DataTransformation` class is part of an ML pipeline, specifically the Data Transformation stage. Its primary roles are:
+
+Load raw data from the Data Ingestion stage.
+
+Preprocess features: encoding, scaling, power transformation.
+
+Feature engineering: add derived features like company_age.
+
+Balance data using SMOTEENN (combines SMOTE oversampling + ENN cleaning).
+
+Save transformed datasets and preprocessor object for model training."""
+
+# =======================================================================================================
+
+"""
+Model Trainer class is a component of an ML pipeline, specifically the Model Training stage. Its primary responsibility is to train multiple ML models using hyperparameter tuning (GridSearchCV), select the best model, evaluate it using metrics (F1, Precision, Recall), and save both the model and metrics as artifacts in a structured pipeline.
+"""
