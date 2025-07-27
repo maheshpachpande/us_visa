@@ -11,7 +11,7 @@ class USvisaEstimator:
     This class is used to save and retrieve our model from s3 bucket and to do prediction
     """
 
-    def __init__(self,bucket_name,model_path,):
+    def __init__(self,bucket_name,model_path):
         """
         :param bucket_name: Name of your model bucket
         :param model_path: Location of your model in bucket

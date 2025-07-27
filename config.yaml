@@ -59,7 +59,7 @@ aws:
 
 model_evaluation:
   changed_threshold_score: 0.02
-  bucket_name: "usvisa-model2025"
+  bucket_name: "usvisamahi"
   pusher_s3_key: "model-registry"
 
 
